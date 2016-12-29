@@ -3,7 +3,11 @@ var Bowling = {
         var punteggio = 0;
         
         tiri.forEach(function(tiro, indice) {
-            punteggio += tiro[0] + tiro[1];
+            if ((tiro[0] + tiro[1]) == 10) {
+                punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
+            } else {
+                punteggio += tiro[0] + tiro[1];
+            }
         });
         
         return punteggio;
