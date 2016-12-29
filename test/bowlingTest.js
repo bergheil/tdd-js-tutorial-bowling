@@ -19,5 +19,10 @@ describe("bowling", function() {
         var tiri = [[10],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
         expect(Bowling.calcolaPunteggio(tiri)).toEqual(30);
     });
+    
+    it("partita con primi due frame in strike e tutti gli altri che colpiscono un birillo", function() {
+        var tiri = [[10],[10],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
+        expect(Bowling.calcolaPunteggio(tiri)).toEqual(49);
+    });
 
 });
