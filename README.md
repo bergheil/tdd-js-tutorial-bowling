@@ -6,3 +6,6 @@ Progetto in fase di sviluppo...
 Tags:
 
 - Passo1: stato iniziale del progetto
+- Passo2: partita con tutti i tiri che colpiscono un birillo
+- Passo3: partita con primo frame in chiusura e tutti gli altri che colpiscono un birillo
+- Passo4: partita con primo frame in strike e tutti gli altri che colpiscono un birillo
