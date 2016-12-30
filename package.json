@@ -11,5 +11,8 @@
     },
     "scripts": {
         "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    },
+    "standard": {
+        "globals": [ "beforeEach", "describe", "expect", "it" ]
     }
 }
