@@ -1,5 +1,6 @@
-# tdd-js-tutorial-bowling
-Tutorial di programmazione guidata dai test in javascript (TDD)
+# Tutorial di Test Drive Development in javascript #
+[![Build Status](https://travis-ci.org/gianlucaciarcelluti/tdd-js-tutorial-bowling.svg?branch=master)](https://travis-ci.org/gianlucaciarcelluti/tdd-js-tutorial-bowling)
+
 
 Progetto in fase di sviluppo...
 
