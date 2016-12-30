@@ -34,5 +34,10 @@ describe("bowling", function() {
         var tiri = [[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1,1]];
         expect(bowling.calcolaPunteggio(tiri)).toEqual(182);
     });
+    
+    it("partita tutti i frame in strike", function() {
+        var tiri = [[10],[10],[10],[10],[10],[10],[10],[10],[10],[10,10,10]];
+        expect(bowling.calcolaPunteggio(tiri)).toEqual(300);
+    });
 
 });

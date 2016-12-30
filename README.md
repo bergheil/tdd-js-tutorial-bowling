@@ -20,3 +20,4 @@ Tags:
 - passo5: partita con primi due frame in strike e tutti gli altri che colpiscono un birillo
 - passo6: refactoring
 - passo7: partita tutti i frame in chiusura e ultimo tiro che colpisce un birillo
+- passo8: partita tutti i frame in strike
