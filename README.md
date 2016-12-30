@@ -19,3 +19,4 @@ Tags:
 - passo4: partita con primo frame in strike e tutti gli altri che colpiscono un birillo
 - passo5: partita con primi due frame in strike e tutti gli altri che colpiscono un birillo
 - passo6: refactoring
+- passo7: partita tutti i frame in chiusura e ultimo tiro che colpisce un birillo

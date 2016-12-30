@@ -29,5 +29,10 @@ describe("bowling", function() {
         var tiri = [[10],[10],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
         expect(bowling.calcolaPunteggio(tiri)).toEqual(49);
     });
+    
+    it("partita tutti i frame in chiusura e ultimo tiro che colpisce un birillo", function() {
+        var tiri = [[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1],[9,1,1]];
+        expect(bowling.calcolaPunteggio(tiri)).toEqual(182);
+    });
 
 });
