@@ -9,6 +9,10 @@
         "karma-jasmine": "*",
         "karma-phantomjs-launcher": "*"
     },
+    "license": {
+        "type": "GPL-3.0",
+        "url": "https://opensource.org/licenses/GPL-3.0"
+    },
     "scripts": {
         "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
     },
