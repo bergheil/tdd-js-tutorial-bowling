@@ -13,7 +13,7 @@ Ancora oggi, molti sviluppatori sono abituati a svolgere una analisi complessiva
 
 Attraverso l'utilizzo del procedimento TDD, la soluzione viene costruita per fasi e approssimazioni incrementali che rendono molto più semplice e alla portata di tutti la gestione di un problema complesso.
 
-Tags:
+Git tags:
 
 - passo1: stato iniziale del progetto
 - passo2: partita con tutti i tiri che colpiscono un birillo
