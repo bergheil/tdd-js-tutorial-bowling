@@ -13,6 +13,10 @@
         "type": "GPL-3.0",
         "url": "https://opensource.org/licenses/GPL-3.0"
     },
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/gianlucaciarcelluti/tdd-js-tutorial-bowling"
+    },
     "scripts": {
         "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
     },
