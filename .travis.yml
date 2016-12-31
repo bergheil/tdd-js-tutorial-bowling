@@ -1,5 +1,10 @@
 language: node_js
 node_js:
   - 0.10
+addons:
+  code_climate:
+    repo_token: eac148360f760e8f6f2cd384e41b609b7f67a8f3b4b4e3e29163704bdbc64e99
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < lcov.info
