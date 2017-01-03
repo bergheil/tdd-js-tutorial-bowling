@@ -31,7 +31,7 @@ La seconda fase richiede la scrittura del codice che si sta testando, facendo at
 
 Nella terza ed ultima fase, possiamo concentrarci sull'analisi del codice appena scritto, verificando la possibilità di migliorare la sua leggibilità ed eleganza.
 
-### creazione del progetto
+### Creazione del progetto
 Clonate il progetto tramite il comando
 ```
 git clone https://github.com/gianlucaciarcelluti/tdd-js-tutorial-bowling
@@ -41,7 +41,11 @@ poi spostatevi nella cartella appena creata e scaricate le librerie necessarie t
 npm install
 ```
 
-### passo1: stato iniziale del progetto
+### Passo1: stato iniziale del progetto
+Posizionatevi nello stato iniziale del progetto lanciando il seguente comando
+```
+git checkout passo1
+```
 Partiamo con un test iniziale per verificare che tutti i tiri fatti a vuoto restituiscano come risultato zero punti scrivendo il seguente codice nel file test/bowlingTest.js
 ```
 describe('bowling', function () {
