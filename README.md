@@ -71,7 +71,7 @@ Bowling.prototype = {
   }
 }
 ```
-e lanciando il test con il seguente comando dovremmo ottenere il fallimento del test come segue
+lanciando il test con il seguente comando dovremmo ottenere il fallimento del test come segue
 ```
 tdd-js-tutorial-bowling: ./node_modules/.bin/karma start
 04 01 2017 00:23:13.986:WARN [karma]: No captured browser, open http://localhost:9876/
@@ -95,7 +95,7 @@ Bowling.prototype = {
   }
 }
 ```
-e rilanciando il test, questa volta dovremmo ottenere la sua esecuzione con successo
+rilanciando il test, questa volta dovremmo ottenere la sua esecuzione con successo
 ```
 tdd-js-tutorial-bowling: ./node_modules/.bin/karma start
 04 01 2017 00:25:53.304:WARN [karma]: No captured browser, open http://localhost:9876/
