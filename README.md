@@ -23,3 +23,71 @@ Git tags:
 - passo6: refactoring
 - passo7: partita tutti i frame in chiusura e ultimo tiro che colpisce un birillo
 - passo8: partita tutti i frame in strike
+
+La pratica del TDD si svolge in 3 fasi distinte: Red Flag, Green Flag e Refactoring.
+La prima fase (Red Flag) richiede che il test scritto fallisce alla sua prima esecuzione, a garanzia che il test stesso sia stato scritto bene.
+
+La seconda fase richiede la scrittura del codice che si sta testando, facendo attenzione a scrivere lo stretto necessario per eseguire il test con successo.
+
+Nella terza ed ultima fase, possiamo concentrarci sull'analisi del codice appena scritto, verificando la possibilità di migliorare la sua leggibilità ed eleganza.
+
+### passo1: stato iniziale del progetto
+Partiamo con un test iniziale per verificare che tutti i tiri fatti a vuoto restituiscano come risultato zero punti scrivendo il seguente codice nel file test/bowlingTest.js
+```
+describe('bowling', function () {
+  var bowling
+
+  beforeEach(function () {
+    bowling = new Bowling()
+  })
+
+  it('partita con tutti i tiri a vuoto', function () {
+    var tiri = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+    expect(bowling.calcolaPunteggio(tiri)).toEqual(0)
+  })
+})
+```
+successivamente scriviamo la seguente funzione da testare all'interno del file src/bowling.js
+```
+function Bowling () {}
+
+Bowling.prototype = {
+  calcolaPunteggio: function (tiri) {
+    return
+  }
+}
+```
+e lanciando il test con il seguente comando dovremmo ottenere il fallimento del test come segue
+```
+tdd-js-tutorial-bowling:  karma start
+04 01 2017 00:23:13.986:WARN [karma]: No captured browser, open http://localhost:9876/
+04 01 2017 00:23:14.007:INFO [karma]: Karma v1.3.0 server started at http://localhost:9876/
+04 01 2017 00:23:14.008:INFO [launcher]: Launching browser PhantomJS with unlimited concurrency
+04 01 2017 00:23:14.034:INFO [launcher]: Starting browser PhantomJS
+04 01 2017 00:23:15.353:INFO [PhantomJS 2.1.1 (Mac OS X 0.0.0)]: Connected on socket /#wIPf20S9JFX4UjEhAAAA with id 80746822
+PhantomJS 2.1.1 (Mac OS X 0.0.0) bowling partita con tutti i tiri a vuoto FAILED
+	Expected null to equal 0.
+	test/bowlingTest.js:5:55
+	loaded@http://localhost:9876/context.js:151:17
+PhantomJS 2.1.1 (Mac OS X 0.0.0): Executed 1 of 1 (1 FAILED) ERROR (0.007 secs / 0.004 secs)
+```
+a questo punto passiamo alla fase 2 scrivendo
+```
+function Bowling () {}
+
+Bowling.prototype = {
+  calcolaPunteggio: function (tiri) {
+    return 0
+  }
+}
+```
+e rilanciando il test, questa volta dovremmo ottenere la sua esecuzione con successo
+```
+tdd-js-tutorial-bowling:  karma start
+04 01 2017 00:25:53.304:WARN [karma]: No captured browser, open http://localhost:9876/
+04 01 2017 00:25:53.323:INFO [karma]: Karma v1.3.0 server started at http://localhost:9876/
+04 01 2017 00:25:53.324:INFO [launcher]: Launching browser PhantomJS with unlimited concurrency
+04 01 2017 00:25:53.387:INFO [launcher]: Starting browser PhantomJS
+04 01 2017 00:25:54.648:INFO [PhantomJS 2.1.1 (Mac OS X 0.0.0)]: Connected on socket /#flyhaVqaAERUUOljAAAA with id 80882250
+PhantomJS 2.1.1 (Mac OS X 0.0.0): Executed 1 of 1 SUCCESS (0.007 secs / 0.004 secs)
+```
