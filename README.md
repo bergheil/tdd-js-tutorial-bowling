@@ -31,6 +31,16 @@ La seconda fase richiede la scrittura del codice che si sta testando, facendo at
 
 Nella terza ed ultima fase, possiamo concentrarci sull'analisi del codice appena scritto, verificando la possibilità di migliorare la sua leggibilità ed eleganza.
 
+### creazione del progetto
+Clonate il progetto tramite il comando
+```
+git clone https://github.com/gianlucaciarcelluti/tdd-js-tutorial-bowling
+```
+poi spostatevi nella cartella appena creata e scaricate le librerie necessarie tramite il comando
+```
+npm install
+```
+
 ### passo1: stato iniziale del progetto
 Partiamo con un test iniziale per verificare che tutti i tiri fatti a vuoto restituiscano come risultato zero punti scrivendo il seguente codice nel file test/bowlingTest.js
 ```
@@ -59,7 +69,7 @@ Bowling.prototype = {
 ```
 e lanciando il test con il seguente comando dovremmo ottenere il fallimento del test come segue
 ```
-tdd-js-tutorial-bowling:  karma start
+tdd-js-tutorial-bowling: ./node_modules/.bin/karma start
 04 01 2017 00:23:13.986:WARN [karma]: No captured browser, open http://localhost:9876/
 04 01 2017 00:23:14.007:INFO [karma]: Karma v1.3.0 server started at http://localhost:9876/
 04 01 2017 00:23:14.008:INFO [launcher]: Launching browser PhantomJS with unlimited concurrency
@@ -83,7 +93,7 @@ Bowling.prototype = {
 ```
 e rilanciando il test, questa volta dovremmo ottenere la sua esecuzione con successo
 ```
-tdd-js-tutorial-bowling:  karma start
+tdd-js-tutorial-bowling: ./node_modules/.bin/karma start
 04 01 2017 00:25:53.304:WARN [karma]: No captured browser, open http://localhost:9876/
 04 01 2017 00:25:53.323:INFO [karma]: Karma v1.3.0 server started at http://localhost:9876/
 04 01 2017 00:25:53.324:INFO [launcher]: Launching browser PhantomJS with unlimited concurrency
