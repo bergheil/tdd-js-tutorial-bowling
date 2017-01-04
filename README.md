@@ -105,3 +105,65 @@ tdd-js-tutorial-bowling: ./node_modules/.bin/karma start
 04 01 2017 00:25:54.648:INFO [PhantomJS 2.1.1 (Mac OS X 0.0.0)]: Connected on socket /#flyhaVqaAERUUOljAAAA with id 80882250
 PhantomJS 2.1.1 (Mac OS X 0.0.0): Executed 1 of 1 SUCCESS (0.007 secs / 0.004 secs)
 ```
+
+### Passo2: partita con tutti i tiri che colpiscono un birillo
+Posizionatevi nello stadio successivo del progetto lanciando il seguente comando
+```
+git checkout passo2
+```
+Proseguiamo con l'aggiunta del test nel file test/bowlingTest.js per verificare che tutti i tiri fatti colpiscono un birillo e che il risultato finale sia di 20 punti
+```
+  it("partita con tutti i tiri che colpiscono un birillo", function() {
+    var tiri = [[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
+    expect(Bowling.calcolaPunteggio(tiri)).toEqual(20);
+  });
+```
+quindi, la nostra funzione riuscirà a soddisfare solamente il primo test e per superare anche il secondo avrà bisogno di essere modificata, per esempio, nella seguente maniera
+```
+function Bowling () {}
+
+Bowling.prototype = {
+  calcolaPunteggio: function (tiri) {
+    var punteggio = 0;
+        
+        tiri.forEach(function(tiro, indice) {
+            punteggio += tiro[0] + tiro[1];
+        });
+        
+        return punteggio;
+  }
+}
+```
+
+### Passo3: partita con primo frame in chiusura e tutti gli altri che colpiscono un birillo
+Posizionatevi nello stadio successivo del progetto lanciando il seguente comando
+```
+git checkout passo3
+```
+Se nel primo tiro faremo una chiusura (Spare) e tutti gli altri tiri colpiscono un birillo, il risultato finale sarà di 29 punti
+```
+  it("partita con primo frame in chiusura e tutti gli altri che colpiscono un birillo", function() {
+    var tiri = [[9,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
+    expect(Bowling.calcolaPunteggio(tiri)).toEqual(29);
+  });
+```
+quindi, la nostra funzione riuscirà a soddisfare solamente i primi due test e per superare anche il terzo avrà bisogno di essere modificata, in maniera tale da computare, in caso di chiusura, il primo tiro successivo 
+```
+function Bowling () {}
+
+Bowling.prototype = {
+  calcolaPunteggio: function (tiri) {
+    var punteggio = 0;
+        
+        tiri.forEach(function(tiro, indice) {
+            if ((tiro[0] + tiro[1]) == 10) {
+                punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
+            } else {
+                punteggio += tiro[0] + tiro[1];
+            }
+        });
+        
+        return punteggio;
+  }
+}
+```
