@@ -157,6 +157,44 @@ Bowling.prototype = {
         
         tiri.forEach(function(tiro, indice) {
             if ((tiro[0] + tiro[1]) == 10) {
+	      // in caso di Spare aggiungo il primo tiro del Frame successivo
+              punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
+            } else {
+              punteggio += tiro[0] + tiro[1];
+            }
+        });
+        
+        return punteggio;
+  }
+}
+```
+
+### Passo4: partita con primo frame in strike e tutti gli altri che colpiscono un birillo
+Posizionatevi nello stadio successivo del progetto lanciando il seguente comando
+```
+git checkout passo3
+```
+Se nel primo tiro faremo uno Strike e tutti gli altri tiri colpiscono un birillo, il risultato finale sarà di 30 punti
+```
+  it("partita con primo frame in strike e tutti gli altri che colpiscono un birillo", function() {
+    var tiri = [[10],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]];
+    expect(Bowling.calcolaPunteggio(tiri)).toEqual(30);
+  });
+```
+per superare anche il quarto test modifichiamo, in maniera tale da computare, in caso di Strike, i 2 tiri del Frame successivo 
+```
+function Bowling () {}
+
+Bowling.prototype = {
+  calcolaPunteggio: function (tiri) {
+    var punteggio = 0;
+        
+        tiri.forEach(function(tiro, indice) {
+            if (tiro[0] == 10) {
+	    	// in caso di Strike aggiungo i 2 tiri del Frame successivo
+                punteggio += tiro[0] + tiri[indice+1][0] + tiri[indice+1][1];
+            } else if ((tiro[0] + tiro[1]) == 10) {
+	    	// in caso di Spare aggiungo il primo tiro del Frame successivo
                 punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
             } else {
                 punteggio += tiro[0] + tiro[1];
