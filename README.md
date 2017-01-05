@@ -156,8 +156,8 @@ Bowling.prototype = {
     var punteggio = 0;
         
         tiri.forEach(function(tiro, indice) {
-            if ((tiro[0] + tiro[1]) == 10) {
-	      // in caso di Spare aggiungo il primo tiro del Frame successivo
+        if ((tiro[0] + tiro[1]) == 10) {
+              // in caso di Spare aggiungo il primo tiro del Frame successivo
               punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
             } else {
               punteggio += tiro[0] + tiro[1];
@@ -191,10 +191,10 @@ Bowling.prototype = {
         
         tiri.forEach(function(tiro, indice) {
             if (tiro[0] == 10) {
-	    	// in caso di Strike aggiungo i 2 tiri del Frame successivo
+                // in caso di Strike aggiungo i 2 tiri del Frame successivo
                 punteggio += tiro[0] + tiri[indice+1][0] + tiri[indice+1][1];
             } else if ((tiro[0] + tiro[1]) == 10) {
-	    	// in caso di Spare aggiungo il primo tiro del Frame successivo
+                // in caso di Spare aggiungo il primo tiro del Frame successivo
                 punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
             } else {
                 punteggio += tiro[0] + tiro[1];
@@ -228,24 +228,24 @@ Bowling.prototype = {
         
         tiri.forEach(function(tiro, indice) {
             if (tiro[0] == 10) {
-	    	// in caso di Strike aggiungo i 2 tiri del Frame successivo
+                // in caso di Strike aggiungo i 2 tiri del Frame successivo
                 punteggio += tiro[0] + tiri[indice+1][0] + tiri[indice+1][1];
             } else if ((tiro[0] + tiro[1]) == 10) {
-	    	// in caso di Spare aggiungo il primo tiro del Frame successivo
+                // in caso di Spare aggiungo il primo tiro del Frame successivo
                 punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
             } else {
                 punteggio += tiro[0] + tiro[1];
             }
 	    if (tiro[0] == 10) {
                 if (tiri[indice+1][0] == 10) {
-		    // in caso di secondo Strike aggiungo i 2 tiri dei 2 Frame successivi
+                    // in caso di secondo Strike aggiungo i 2 tiri dei 2 Frame successivi
                     punteggio += tiro[0] + tiri[indice+1][0] + tiri[indice+2][0];
                 } else {
-		    // in caso di Strike aggiungo i 2 tiri del Frame successivo
+                    // in caso di Strike aggiungo i 2 tiri del Frame successivo
                     punteggio += tiro[0] + tiri[indice+1][0] + tiri[indice+1][1];
                 }
             } else if ((tiro[0] + tiro[1]) == 10) {
-	        // in caso di Spare aggiungo il primo tiro del Frame successivo
+                // in caso di Spare aggiungo il primo tiro del Frame successivo
                 punteggio += tiro[0] + tiro[1] + tiri[indice+1][0];
             } else {
                 punteggio += tiro[0] + tiro[1];
