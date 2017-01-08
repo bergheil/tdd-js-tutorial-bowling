@@ -15,7 +15,7 @@ Bowling.prototype = {
 
     tiri.push([0])
 
-    tiri.forEach( function (tiro, indice) {
+    tiri.forEach(function (tiro, indice) {
       if (indice === 10) { return }
       if (indice === 9) {
         if (me.isSpare(tiro) || me.isStrike(tiro)) {
@@ -57,9 +57,9 @@ Bowling.prototype = {
   },
 
   /**
-  * Verifica se un frame è uno Spare ovvero se la somma 
+  * Verifica se un frame è uno Spare ovvero se la somma
   * dei due tiri ha come risultato 10.
-  * @param {array} tiro Array con i risultati dei due tiri     
+  * @param {array} tiro Array con i risultati dei due tiri
   * @return {boolean} True se si tratta di uno spare false altrimenti
   */
   isSpare: function (tiro) {
@@ -67,9 +67,9 @@ Bowling.prototype = {
   },
 
   /**
-  * Verifica se un frame è uno Strike ovvero se 
+  * Verifica se un frame è uno Strike ovvero se
   * al primo tire vengono abbattuti tutti e 10 birilli.
-  * @param {array} tiro Array con i risultati dei due tiri     
+  * @param {array} tiro Array con i risultati dei due tiri
   * @return {boolean} True se si tratta di uno Strike false altrimenti
   */
   isStrike: function (tiro) {
@@ -78,7 +78,7 @@ Bowling.prototype = {
 
   /**
   * Verifica se l'ultimo tiro dell'ultimo frame è uno Strike.
-  * @param {array} tiro Array con i risultati dei due tiri     
+  * @param {array} tiro Array con i risultati dei due tiri
   * @return {boolean} True se si tratta di uno Strike false altrimenti
   */
   isSecondoStrike: function (tiro) {
