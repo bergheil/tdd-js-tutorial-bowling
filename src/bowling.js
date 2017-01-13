@@ -18,7 +18,7 @@ Bowling.prototype = {
     for (var indice = 0; indice < 10; indice++) {
       var tiro = tiri[indice]
       primoTiroSuccessivo = me.calcolaPrimoTiroSuccessivo(tiri, indice)
-      secondoTiroSuccessivo = me.calcolaSecondoTiroSuccessivo(tiri, indice)     
+      secondoTiroSuccessivo = me.calcolaSecondoTiroSuccessivo(tiri, indice)
 
       if (me.isStrike(tiro)) {
         // console.log(indice + 1)
@@ -41,7 +41,7 @@ Bowling.prototype = {
 
     return punteggio
   },
-  
+
   /**
    * Calcola il punteggio del secondo tiro nel successivo frame.
    * @param {array} tiri Array di 10 elementi composti ognuno da due tiri.
@@ -53,19 +53,19 @@ Bowling.prototype = {
     var punteggio = 0
     var tiro = tiri[indice]
     if (indice === 9) {
-      if (me.isSpare(tiro) || me.isStrike(tiro)) {        
+      if (me.isSpare(tiro) || me.isStrike(tiro)) {
         if (me.isSecondoStrike(tiro)) {
           punteggio = 10
         } else {
           punteggio = 0
         }
-      } 
-    } else {      
+      }
+    } else {
       punteggio = tiri[indice + 1][1]
     }
     return punteggio
   },
-  
+
   /**
    * Calcola il punteggio del primo tiro nel successivo frame.
    * @param {array} tiri Array di 10 elementi composti ognuno da due tiri.
@@ -78,10 +78,10 @@ Bowling.prototype = {
     var tiro = tiri[indice]
     if (indice === 9) {
       if (me.isSpare(tiro) || me.isStrike(tiro)) {
-        punteggio = tiro[2]        
-      } 
+        punteggio = tiro[2]
+      }
     } else {
-      punteggio = tiri[indice + 1][0]      
+      punteggio = tiri[indice + 1][0]
     }
     return punteggio
   },
