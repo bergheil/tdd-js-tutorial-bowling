@@ -15,24 +15,10 @@ Bowling.prototype = {
 
     tiri.push([0])
 
-    tiri.forEach(function (tiro, indice) {
-      if (indice === 10) { return }
-      if (indice === 9) {
-        if (me.isSpare(tiro) || me.isStrike(tiro)) {
-          primoTiroSuccessivo = tiro[2]
-          if (me.isSecondoStrike(tiro)) {
-            secondoTiroSuccessivo = 10
-          } else {
-            secondoTiroSuccessivo = 0
-          }
-        } else {
-          primoTiroSuccessivo = 0
-          secondoTiroSuccessivo = 0
-        }
-      } else {
-        primoTiroSuccessivo = tiri[indice + 1][0]
-        secondoTiroSuccessivo = tiri[indice + 1][1]
-      }
+    for (var indice = 0; indice < 10; indice++) {
+      var tiro = tiri[indice]
+      primoTiroSuccessivo = me.calcolaPrimoTiroSuccessivo(tiri, indice)
+      secondoTiroSuccessivo = me.calcolaSecondoTiroSuccessivo(tiri, indice)     
 
       if (me.isStrike(tiro)) {
         // console.log(indice + 1)
@@ -51,8 +37,52 @@ Bowling.prototype = {
       } else {
         punteggio += tiro[0] + tiro[1]
       }
-    })
+    }
 
+    return punteggio
+  },
+  
+  /**
+   * Calcola il punteggio del secondo tiro nel successivo frame.
+   * @param {array} tiri Array di 10 elementi composti ognuno da due tiri.
+   * @param {number} indice che indica il frame in cui ci si trova
+   * @return {number} punteggio per il secondo tiro del successivo frame.
+   */
+  calcolaSecondoTiroSuccessivo: function (tiri, indice) {
+    var me = this
+    var punteggio = 0
+    var tiro = tiri[indice]
+    if (indice === 9) {
+      if (me.isSpare(tiro) || me.isStrike(tiro)) {        
+        if (me.isSecondoStrike(tiro)) {
+          punteggio = 10
+        } else {
+          punteggio = 0
+        }
+      } 
+    } else {      
+      punteggio = tiri[indice + 1][1]
+    }
+    return punteggio
+  },
+  
+  /**
+   * Calcola il punteggio del primo tiro nel successivo frame.
+   * @param {array} tiri Array di 10 elementi composti ognuno da due tiri.
+   * @param {number} indice che indica il frame in cui ci si trova
+   * @return {number} punteggio per il primo tiro del successivo frame.
+   */
+  calcolaPrimoTiroSuccessivo: function (tiri, indice) {
+    var me = this
+    var punteggio = 0
+    var tiro = tiri[indice]
+    if (indice === 9) {
+      if (me.isSpare(tiro) || me.isStrike(tiro)) {
+        punteggio = tiro[2]        
+      } 
+    } else {
+      punteggio = tiri[indice + 1][0]      
+    }
     return punteggio
   },
 
